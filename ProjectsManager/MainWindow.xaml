@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjectsManager"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="1024"
+        Title="MainWindow" Height="768" Width="1280"
         WindowStyle="None"
         Background="Transparent"
         AllowsTransparency="True"
@@ -46,16 +46,14 @@
                 </Grid.ColumnDefinitions>
 
 
-                <Button Style="{StaticResource Windowbutton}" x:Name="Exitbutton" Click="ExitButton_Click" Content="X" HorizontalAlignment="Left" Margin="449,6,0,0" VerticalAlignment="Top" Height="42" Width="48" Grid.Column="1" Grid.RowSpan="2"/>
-                <Button Style="{StaticResource Windowbutton}" x:Name="Minimizebutton" Click="MinimizeButton_Click" Content="-" HorizontalAlignment="Left" Margin="401,6,0,0" VerticalAlignment="Top" Height="42" Width="48" Grid.Column="1" Grid.RowSpan="2"/>
+                <Button Style="{StaticResource Windowbutton}" x:Name="Exitbutton" Click="ExitButton_Click" Content="X" HorizontalAlignment="Left" Margin="570,6,0,0" VerticalAlignment="Top" Height="42" Width="48" Grid.Column="1" Grid.RowSpan="2"/>
+                <Button Style="{StaticResource Windowbutton}" x:Name="Minimizebutton" Click="MinimizeButton_Click" Content="-" HorizontalAlignment="Left" Margin="522,6,0,0" VerticalAlignment="Top" Height="42" Width="48" Grid.Column="1" Grid.RowSpan="2"/>
 
-                <Button Style="{StaticResource Menubutton}" x:Name="Infobutton" Content="Info" HorizontalAlignment="Left" Margin="28,10,0,0" Grid.Row="1" VerticalAlignment="Top" Height="105" Width="130"/>
-                <Button Style="{StaticResource Menubutton}" x:Name="Calendarbutton" Content="Calendar" HorizontalAlignment="Left" Margin="28,115,0,0" Grid.Row="1" VerticalAlignment="Top" Height="105" Width="130"/>
-                <Button Style="{StaticResource Menubutton}" x:Name="Projectsbutton" Content="Projects" HorizontalAlignment="Left" Margin="28,225,0,0" Grid.Row="1" VerticalAlignment="Top" Height="105" Width="130"/>
-                <Button Style="{StaticResource Menubutton}" x:Name="Summarybutton" Content="Summary" HorizontalAlignment="Left" Margin="28,330,0,0" Grid.Row="1" VerticalAlignment="Top" Height="105" Width="130"/>
-                <Button Style="{StaticResource Menubutton}" x:Name="Aboutbutton" Content="About us" HorizontalAlignment="Left" Margin="28,440,0,0" Grid.Row="1" VerticalAlignment="Top" Height="105" Width="130"/>
-                <Label x:Name="label1" Grid.Column="1" Content="Label" HorizontalAlignment="Left" Margin="99,330,0,0" Grid.Row="1" VerticalAlignment="Top" Height="105" Width="154"/>
-                <Button Grid.Column="1" Content="Button" HorizontalAlignment="Left" Margin="150,239,0,0" Grid.Row="1" VerticalAlignment="Top" Click="Button_Click"/>
+                <Button Style="{StaticResource Menubutton}" x:Name="Infobutton" Content="Info" HorizontalAlignment="Left" Margin="28,0,0,0" Grid.Row="1" VerticalAlignment="Top" Height="105" Width="130" Click="Infobutton_Click"/>
+                <Button Style="{StaticResource Menubutton}" x:Name="Calendarbutton" Content="Calendar" HorizontalAlignment="Left" Margin="28,153,0,0" Grid.Row="1" VerticalAlignment="Top" Height="105" Width="130" Click="Calendarbutton_Click"/>
+                <Button Style="{StaticResource Menubutton}" x:Name="Projectsbutton" Content="Projects" HorizontalAlignment="Left" Margin="28,0,0,0" Grid.Row="1" VerticalAlignment="Center" Height="106" Width="130" Click="Projectsbutton_Click"/>
+                <Button Style="{StaticResource Menubutton}" x:Name="Summarybutton" Content="Summary" HorizontalAlignment="Left" Margin="28,457,0,0" Grid.Row="1" VerticalAlignment="Top" Height="105" Width="130" Click="Summarybutton_Click"/>
+                <Button Style="{StaticResource Menubutton}" x:Name="Aboutbutton" Content="About us" HorizontalAlignment="Left" Margin="28,596,0,0" Grid.Row="1" VerticalAlignment="Top" Height="105" Width="130" Click="Aboutbutton_Click"/>
 
             </Grid>
         </Border>
