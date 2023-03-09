@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ButtonSpace;
 
 namespace ProjectsManager
 {
@@ -22,7 +23,7 @@ namespace ProjectsManager
     {
         public MainWindow()
         {
-            InitializeComponent();
+            InitializeComponent();           
         }
 
         private void Window_mousedown(object sender, MouseButtonEventArgs e)
@@ -45,5 +46,6 @@ namespace ProjectsManager
         {
             this.WindowState = WindowState.Minimized;
         }
+
     }
 }

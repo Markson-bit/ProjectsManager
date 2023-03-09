@@ -54,6 +54,8 @@
                 <Button Style="{StaticResource Menubutton}" x:Name="Projectsbutton" Content="Projects" HorizontalAlignment="Left" Margin="28,225,0,0" Grid.Row="1" VerticalAlignment="Top" Height="105" Width="130"/>
                 <Button Style="{StaticResource Menubutton}" x:Name="Summarybutton" Content="Summary" HorizontalAlignment="Left" Margin="28,330,0,0" Grid.Row="1" VerticalAlignment="Top" Height="105" Width="130"/>
                 <Button Style="{StaticResource Menubutton}" x:Name="Aboutbutton" Content="About us" HorizontalAlignment="Left" Margin="28,440,0,0" Grid.Row="1" VerticalAlignment="Top" Height="105" Width="130"/>
+                <Label x:Name="label1" Grid.Column="1" Content="Label" HorizontalAlignment="Left" Margin="99,330,0,0" Grid.Row="1" VerticalAlignment="Top" Height="105" Width="154"/>
+                <Button Grid.Column="1" Content="Button" HorizontalAlignment="Left" Margin="150,239,0,0" Grid.Row="1" VerticalAlignment="Top" Click="Button_Click"/>
 
             </Grid>
         </Border>
