@@ -9,6 +9,13 @@
       Title="ProjectsPage">
 
     <Grid>
-        
+        <ListBox HorizontalAlignment="Left" Height="638" Margin="10,0,0,0" VerticalAlignment="Center" Width="503" d:ItemsSource="{d:SampleData ItemCount=5}" Background="#145ca2" Foreground="White" BorderBrush="#212780" BorderThickness="3"/>
+        <TextBox Text="Input task name" HorizontalAlignment="Left" Margin="544,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="520" Height="29" FontFamily="Verdana" FontSize="20" Background="#145ca2" Foreground="White" BorderBrush="#212780" BorderThickness="3"/>
+        <TextBox Text="Input worker" HorizontalAlignment="Left" Margin="544,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="520" Height="29" FontFamily="Verdana" FontSize="20" Background="#145ca2" Foreground="White" BorderBrush="#212780" BorderThickness="3"/>
+        <TextBox Text="Input description" HorizontalAlignment="Left" Margin="544,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="520" Height="29" FontFamily="Verdana" FontSize="20" Background="#145ca2" Foreground="White" BorderBrush="#212780" BorderThickness="3"/>
+        <DatePicker HorizontalAlignment="Left" Margin="544,217,0,0" VerticalAlignment="Top"/>
+        <Button Style="{StaticResource Menubutton}" BorderBrush="#212780" BorderThickness="3" Content="Add" HorizontalAlignment="Left" Margin="616,279,0,0" VerticalAlignment="Top" Width="83"/>
+        <Button Style="{StaticResource Menubutton}" BorderBrush="#212780" BorderThickness="3" Content="Delete" HorizontalAlignment="Left" Margin="922,279,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Page>

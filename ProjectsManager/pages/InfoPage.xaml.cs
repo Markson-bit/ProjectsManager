@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace ProjectsManager.pages
 {
@@ -23,6 +24,17 @@ namespace ProjectsManager.pages
         public InfoPage()
         {
             InitializeComponent();
+            var timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(0.01);
+            timer.Tick += Timer_Tick;
+            timer.Start();
+
+        }
+
+        // Timer for refreshing actual time
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            StaticDate.Text = "Today is: " + DateTime.Now.ToString("g");
         }
     }
 }
