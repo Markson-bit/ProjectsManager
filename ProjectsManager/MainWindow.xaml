@@ -47,6 +47,7 @@
                 <Button Style="{StaticResource Menubutton}" x:Name="Calendarbutton" Content="Calendar" HorizontalAlignment="Left" Margin="28,215,0,0" Grid.Row="1" VerticalAlignment="Top" Height="105" Width="130" Click="Calendarbutton_Click"/>
                 <Button Style="{StaticResource Menubutton}" x:Name="Projectsbutton" Content="Projects" HorizontalAlignment="Left" Margin="28,383,0,0" Grid.Row="1" VerticalAlignment="Top" Height="106" Width="130" Click="Projectsbutton_Click"/>
                 <Button Style="{StaticResource Menubutton}" x:Name="Aboutbutton" Content="About us" HorizontalAlignment="Left" Margin="28,554,0,0" Grid.Row="1" VerticalAlignment="Top" Height="105" Width="130" Click="Aboutbutton_Click"/>
+
                 <Frame Name="frame" Margin="163,32,20,32" Grid.Row="1" NavigationUIVisibility="Hidden"/>
             </Grid>
         </Border>

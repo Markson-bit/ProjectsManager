@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 using ButtonSpace;
 
 namespace ProjectsManager
@@ -23,7 +24,8 @@ namespace ProjectsManager
     {
         public MainWindow()
         {
-            InitializeComponent();           
+            InitializeComponent();
+            frame.Source = new Uri("/pages/DefaultPage.xaml", UriKind.Relative);
         }
 
         // Method that allows moving window
@@ -58,6 +60,7 @@ namespace ProjectsManager
 
         private void Infobutton_Click(object sender, RoutedEventArgs e)
         {
+            
             frame.Source = new Uri("/pages/InfoPage.xaml", UriKind.Relative);
             ButtonMethods buttonMethods = new ButtonMethods();
         }
