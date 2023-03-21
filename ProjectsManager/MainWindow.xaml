@@ -49,6 +49,10 @@
                 <Button Style="{StaticResource Menubutton}" x:Name="Aboutbutton" Content="About us" HorizontalAlignment="Left" Margin="28,554,0,0" Grid.Row="1" VerticalAlignment="Top" Height="105" Width="130" Click="Aboutbutton_Click"/>
 
                 <Frame Name="frame" Margin="163,32,20,32" Grid.Row="1" NavigationUIVisibility="Hidden"/>
+                <Label Content="&#xf05a;" Foreground="White" HorizontalAlignment="Left" Margin="-2,68,0,0" Grid.Row="1" VerticalAlignment="Top" Height="30" Width="30" FontFamily="\fonts\#Font Awesome 6 Free Solid" FontSize="20"/>
+                <Label Content="&#xf133;" Foreground="White" HorizontalAlignment="Left" Margin="-2,251,0,0" Grid.Row="1" VerticalAlignment="Top" Height="30" Width="30" FontFamily="\fonts\#Font Awesome 6 Free Solid" FontSize="20"/>
+                <Label Content="&#xf0ae;" Foreground="White" HorizontalAlignment="Left" Margin="-2,419,0,0" Grid.Row="1" VerticalAlignment="Top" Height="30" Width="30" FontFamily="\fonts\#Font Awesome 6 Free Solid" FontSize="20"/>
+                <Label Content="&#xf2bb;" Foreground="White" HorizontalAlignment="Left" Margin="-2,590,0,0" Grid.Row="1" VerticalAlignment="Top" Height="30" Width="33" FontFamily="\fonts\#Font Awesome 6 Free Solid" FontSize="20"/>
             </Grid>
         </Border>
     </Border>

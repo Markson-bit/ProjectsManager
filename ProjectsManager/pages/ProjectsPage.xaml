@@ -9,12 +9,12 @@
       Title="ProjectsPage">
 
     <Grid>
-        <ListBox HorizontalAlignment="Left" Height="638" Margin="28,0,0,0" VerticalAlignment="Center" Width="485" d:ItemsSource="{d:SampleData ItemCount=5}" Background="Transparent" Foreground="White" BorderBrush="Silver" BorderThickness="3"/>
+        <ListBox HorizontalAlignment="Left" Height="638" Margin="28,0,0,0" VerticalAlignment="Center" Width="462" d:ItemsSource="{d:SampleData ItemCount=5}" Background="Transparent" Foreground="White" BorderBrush="Silver" BorderThickness="3"/>
         <TextBox HorizontalAlignment="Left" Margin="544,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="520" Height="29" FontFamily="Verdana" FontSize="20" Background="Transparent" Foreground="White" BorderBrush="Silver" BorderThickness="0,0,0,3"/>
         <TextBlock Text="Name" FontFamily="Verdana" FontSize="10" Foreground="White" Margin="544,27,510,612"/>
         <TextBox HorizontalAlignment="Left" Margin="544,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="520" Height="29" FontFamily="Verdana" FontSize="20" Background="Transparent" Foreground="White" BorderBrush="Silver" BorderThickness="0,0,0,3"/>
         <TextBlock Text="Worker" FontFamily="Verdana" FontSize="10" Foreground="White" Margin="544,93,505,546"/>
-        <TextBox HorizontalAlignment="Left" Margin="544,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="520" Height="29" FontFamily="Verdana" FontSize="20" Background="Transparent" Foreground="White" BorderBrush="Silver" BorderThickness="0,0,0,3"/>
+        <TextBox HorizontalAlignment="Left" Margin="544,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="520" Height="29" FontFamily="Verdana" FontSize="10" Background="Transparent" Foreground="White" BorderBrush="Silver" BorderThickness="0,0,0,3"/>
         <TextBlock Text="Description" FontFamily="Verdana" FontSize="10" Foreground="White" Margin="544,163,487,476"/>
         <DatePicker HorizontalAlignment="Left" Margin="544,236,0,0" VerticalAlignment="Top" Height="33" Width="260" FontFamily="Verdana" FontSize="20" Background="Transparent" Foreground="White" BorderThickness="0" BorderBrush="Transparent">
             <DatePicker.Style>
@@ -36,5 +36,18 @@
         <TextBlock HorizontalAlignment="Left" Margin="544,390,0,0" TextWrapping="Wrap" Text="Details:" VerticalAlignment="Top" Height="25" Width="520" Foreground="White" FontSize="20" FontFamily="Verdana" TextAlignment="Center"/>
         <Border BorderBrush="Silver" BorderThickness="0,3,0,3" HorizontalAlignment="Left" Height="277" Margin="544,371,0,0" VerticalAlignment="Top" Width="520"/>
 
+        <Label Content="&#xf08d;" Foreground="Silver" HorizontalAlignment="Left" Margin="513,42,0,0" VerticalAlignment="Top" Height="30" Width="31" FontFamily="\fonts\#Font Awesome 6 Free Solid" FontSize="20"/>
+        <Label Content="&#xf007;" Foreground="Silver" HorizontalAlignment="Left" Margin="513,112,0,0" VerticalAlignment="Top" Height="30" Width="31" FontFamily="\fonts\#Font Awesome 6 Free Solid" FontSize="20"/>
+        <Label Content="&#xf075;" Foreground="Silver" HorizontalAlignment="Left" Margin="513,183,0,0" VerticalAlignment="Top" Height="30" Width="31" FontFamily="\fonts\#Font Awesome 6 Free Solid" FontSize="20"/>
+        <Label Content="&#xf073;" Foreground="Silver" HorizontalAlignment="Left" Margin="513,236,0,0" VerticalAlignment="Top" Height="30" Width="31" FontFamily="\fonts\#Font Awesome 6 Free Solid" FontSize="20"/>
+        <Label Content="&#xF08D;" Foreground="Silver" HorizontalAlignment="Left" Margin="546,420,0,0" VerticalAlignment="Top" Height="30" Width="26" FontFamily="\fonts\#Font Awesome 6 Free Solid" FontSize="20"/>
+        <Label Content="&#xF007;" Foreground="Silver" HorizontalAlignment="Left" Margin="544,464,0,0" VerticalAlignment="Top" Height="30" Width="30" FontFamily="\fonts\#Font Awesome 6 Free Solid" FontSize="20"/>
+        <Label Content="&#xF075;" Foreground="Silver" HorizontalAlignment="Left" Margin="544,510,0,0" VerticalAlignment="Top" Height="30" Width="30" FontFamily="\fonts\#Font Awesome 6 Free Solid" FontSize="20"/>
+        <Label Content="&#xf073;" Foreground="Silver" HorizontalAlignment="Left" Margin="544,558,0,0" VerticalAlignment="Top" Height="30" Width="30" FontFamily="\fonts\#Font Awesome 6 Free Solid" FontSize="20"/>
+
+        <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="Task name:" Margin="577,428,434,216" FontSize="12" FontFamily="Verdana" Foreground="White"/>
+        <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="Worker(s):" Margin="577,472,434,172" FontSize="12" FontFamily="Verdana" Foreground="White"/>
+        <TextBlock TextWrapping="Wrap" Text="Description:" Margin="579,518,434,126" FontSize="12" FontFamily="Verdana" Foreground="White"/>
+        <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="Datetime:" Margin="579,566,434,78" FontSize="12" FontFamily="Verdana" Foreground="White"/>
     </Grid>
 </Page>
