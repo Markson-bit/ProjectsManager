@@ -25,7 +25,7 @@ namespace ProjectsManager
         public MainWindow()
         {
             InitializeComponent();
-            frame.Source = new Uri("/pages/DefaultPage.xaml", UriKind.Relative);
+            frame.Source = new Uri("/pages/InfoPage.xaml", UriKind.Relative);
         }
 
         // Method that allows moving window

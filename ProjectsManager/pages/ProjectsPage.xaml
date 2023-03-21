@@ -9,13 +9,32 @@
       Title="ProjectsPage">
 
     <Grid>
-        <ListBox HorizontalAlignment="Left" Height="638" Margin="10,0,0,0" VerticalAlignment="Center" Width="503" d:ItemsSource="{d:SampleData ItemCount=5}" Background="#145ca2" Foreground="White" BorderBrush="#212780" BorderThickness="3"/>
-        <TextBox Text="Input task name" HorizontalAlignment="Left" Margin="544,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="520" Height="29" FontFamily="Verdana" FontSize="20" Background="#145ca2" Foreground="White" BorderBrush="#212780" BorderThickness="3"/>
-        <TextBox Text="Input worker" HorizontalAlignment="Left" Margin="544,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="520" Height="29" FontFamily="Verdana" FontSize="20" Background="#145ca2" Foreground="White" BorderBrush="#212780" BorderThickness="3"/>
-        <TextBox Text="Input description" HorizontalAlignment="Left" Margin="544,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="520" Height="29" FontFamily="Verdana" FontSize="20" Background="#145ca2" Foreground="White" BorderBrush="#212780" BorderThickness="3"/>
-        <DatePicker HorizontalAlignment="Left" Margin="544,217,0,0" VerticalAlignment="Top"/>
-        <Button Style="{StaticResource Menubutton}" BorderBrush="#212780" BorderThickness="3" Content="Add" HorizontalAlignment="Left" Margin="616,279,0,0" VerticalAlignment="Top" Width="83"/>
-        <Button Style="{StaticResource Menubutton}" BorderBrush="#212780" BorderThickness="3" Content="Delete" HorizontalAlignment="Left" Margin="922,279,0,0" VerticalAlignment="Top"/>
+        <ListBox HorizontalAlignment="Left" Height="638" Margin="28,0,0,0" VerticalAlignment="Center" Width="485" d:ItemsSource="{d:SampleData ItemCount=5}" Background="Transparent" Foreground="White" BorderBrush="Silver" BorderThickness="3"/>
+        <TextBox HorizontalAlignment="Left" Margin="544,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="520" Height="29" FontFamily="Verdana" FontSize="20" Background="Transparent" Foreground="White" BorderBrush="Silver" BorderThickness="0,0,0,3"/>
+        <TextBlock Text="Name" FontFamily="Verdana" FontSize="10" Foreground="White" Margin="544,27,510,612"/>
+        <TextBox HorizontalAlignment="Left" Margin="544,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="520" Height="29" FontFamily="Verdana" FontSize="20" Background="Transparent" Foreground="White" BorderBrush="Silver" BorderThickness="0,0,0,3"/>
+        <TextBlock Text="Worker" FontFamily="Verdana" FontSize="10" Foreground="White" Margin="544,93,505,546"/>
+        <TextBox HorizontalAlignment="Left" Margin="544,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="520" Height="29" FontFamily="Verdana" FontSize="20" Background="Transparent" Foreground="White" BorderBrush="Silver" BorderThickness="0,0,0,3"/>
+        <TextBlock Text="Description" FontFamily="Verdana" FontSize="10" Foreground="White" Margin="544,163,487,476"/>
+        <DatePicker HorizontalAlignment="Left" Margin="544,236,0,0" VerticalAlignment="Top" Height="33" Width="260" FontFamily="Verdana" FontSize="20" Background="Transparent" Foreground="White" BorderThickness="0" BorderBrush="Transparent">
+            <DatePicker.Style>
+                <Style TargetType="{x:Type DatePicker}">
+                    <Style.Resources>
+                        <Style TargetType="DatePickerTextBox">
+                            <Setter Property="Background">
+                                <Setter.Value>
+                                    <SolidColorBrush Color="White" Opacity="0"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Style.Resources>
+                </Style>
+            </DatePicker.Style>
+        </DatePicker>
+        <Button Style="{StaticResource Menubutton}" Content="Add" HorizontalAlignment="Left" Margin="674,299,0,0" VerticalAlignment="Top" Width="83"/>
+        <Button Style="{StaticResource Menubutton}" BorderThickness="0,0,0,4" Content="Delete" HorizontalAlignment="Left" Margin="849,299,0,0" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="544,390,0,0" TextWrapping="Wrap" Text="Details:" VerticalAlignment="Top" Height="25" Width="520" Foreground="White" FontSize="20" FontFamily="Verdana" TextAlignment="Center"/>
+        <Border BorderBrush="Silver" BorderThickness="0,3,0,3" HorizontalAlignment="Left" Height="277" Margin="544,371,0,0" VerticalAlignment="Top" Width="520"/>
 
     </Grid>
 </Page>
