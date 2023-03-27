@@ -11,6 +11,5 @@
     <Grid>
         <TextBlock Style="{StaticResource StaticTextBig}" Text="Welcome" HorizontalAlignment="Left" Margin="458,10,0,0" VerticalAlignment="Top" Height="63" Width="232"/>
         <TextBlock Style="{StaticResource StaticTextSmall}" x:Name="StaticDate" HorizontalAlignment="Left" Margin="353,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="442"/>
-
     </Grid>
 </Page>

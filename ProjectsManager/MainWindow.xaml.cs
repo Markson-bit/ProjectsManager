@@ -62,25 +62,21 @@ namespace ProjectsManager
         {
             
             frame.Source = new Uri("/pages/InfoPage.xaml", UriKind.Relative);
-            ButtonMethods buttonMethods = new ButtonMethods();
         }
 
         private void Calendarbutton_Click(object sender, RoutedEventArgs e)
         {
             frame.Source = new Uri("/pages/CalendarPage.xaml", UriKind.Relative);
-            ButtonMethods buttonMethods = new ButtonMethods();
         }
 
         private void Projectsbutton_Click(object sender, RoutedEventArgs e)
         {
             frame.Source = new Uri("/pages/ProjectsPage.xaml", UriKind.Relative);
-            ButtonMethods buttonMethods = new ButtonMethods();
         }    
 
         private void Aboutbutton_Click(object sender, RoutedEventArgs e)
         {
             frame.Source = new Uri("/pages/AboutUsPage.xaml", UriKind.Relative);
-            ButtonMethods buttonMethods = new ButtonMethods();
         }
     }
 }

@@ -9,14 +9,14 @@
       Title="ProjectsPage">
 
     <Grid>
-        <ListBox HorizontalAlignment="Left" Height="638" Margin="28,0,0,0" VerticalAlignment="Center" Width="462" d:ItemsSource="{d:SampleData ItemCount=5}" Background="Transparent" Foreground="White" BorderBrush="Silver" BorderThickness="3"/>
-        <TextBox HorizontalAlignment="Left" Margin="544,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="520" Height="29" FontFamily="Verdana" FontSize="20" Background="Transparent" Foreground="White" BorderBrush="Silver" BorderThickness="0,0,0,3"/>
+        <ListBox x:Name="TaskList" HorizontalAlignment="Left" Height="638" Margin="28,0,0,0" VerticalAlignment="Center" Width="462" d:ItemsSource="{d:SampleData ItemCount=5}" FontFamily="Verdana" FontSize="18" Background="Transparent" Foreground="White" BorderBrush="Silver" BorderThickness="3" SelectionChanged="TaskList_SelectionChanged"/>
+        <TextBox x:Name="NameBox" MaxLength="40" HorizontalAlignment="Left" Margin="544,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="520" Height="29" FontFamily="Verdana" FontSize="20" Background="Transparent" Foreground="White" BorderBrush="Silver" BorderThickness="0,0,0,3"/>
         <TextBlock Text="Name" FontFamily="Verdana" FontSize="10" Foreground="White" Margin="544,27,510,612"/>
         <TextBox HorizontalAlignment="Left" Margin="544,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="520" Height="29" FontFamily="Verdana" FontSize="20" Background="Transparent" Foreground="White" BorderBrush="Silver" BorderThickness="0,0,0,3"/>
         <TextBlock Text="Worker" FontFamily="Verdana" FontSize="10" Foreground="White" Margin="544,93,505,546"/>
         <TextBox HorizontalAlignment="Left" Margin="544,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="520" Height="29" FontFamily="Verdana" FontSize="10" Background="Transparent" Foreground="White" BorderBrush="Silver" BorderThickness="0,0,0,3"/>
         <TextBlock Text="Description" FontFamily="Verdana" FontSize="10" Foreground="White" Margin="544,163,487,476"/>
-        <DatePicker HorizontalAlignment="Left" Margin="544,236,0,0" VerticalAlignment="Top" Height="33" Width="260" FontFamily="Verdana" FontSize="20" Background="Transparent" Foreground="White" BorderThickness="0" BorderBrush="Transparent">
+        <DatePicker HorizontalAlignment="Left" Margin="544,236,0,0" VerticalAlignment="Top" Height="33" Width="260" FontFamily="Verdana" FontSize="20" Background="Transparent" Foreground="White" BorderThickness="0" BorderBrush="Transparent" Text="Choose date">
             <DatePicker.Style>
                 <Style TargetType="{x:Type DatePicker}">
                     <Style.Resources>
@@ -31,10 +31,12 @@
                 </Style>
             </DatePicker.Style>
         </DatePicker>
-        <Button Style="{StaticResource Menubutton}" Content="Add" HorizontalAlignment="Left" Margin="674,299,0,0" VerticalAlignment="Top" Width="83"/>
-        <Button Style="{StaticResource Menubutton}" BorderThickness="0,0,0,4" Content="Delete" HorizontalAlignment="Left" Margin="849,299,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="AddTask" Style="{StaticResource Menubutton}" Content="Add" HorizontalAlignment="Left" Margin="674,299,0,0" VerticalAlignment="Top" Width="83" Click="AddTask_Click"/>
+        <Button x:Name="DelTask" Style="{StaticResource Menubutton}" BorderThickness="0,0,0,4" Content="Delete" HorizontalAlignment="Left" Margin="849,299,0,0" VerticalAlignment="Top" Click="DelTask_Click"/>
         <TextBlock HorizontalAlignment="Left" Margin="544,390,0,0" TextWrapping="Wrap" Text="Details:" VerticalAlignment="Top" Height="25" Width="520" Foreground="White" FontSize="20" FontFamily="Verdana" TextAlignment="Center"/>
         <Border BorderBrush="Silver" BorderThickness="0,3,0,3" HorizontalAlignment="Left" Height="277" Margin="544,371,0,0" VerticalAlignment="Top" Width="520"/>
+
+        <TextBlock Text="Active tasks:" FontFamily="Verdana" FontSize="20" Foreground="White" Margin="194,-35,763,666"/>
 
         <Label Content="&#xf08d;" Foreground="Silver" HorizontalAlignment="Left" Margin="513,42,0,0" VerticalAlignment="Top" Height="30" Width="31" FontFamily="\fonts\#Font Awesome 6 Free Solid" FontSize="20"/>
         <Label Content="&#xf007;" Foreground="Silver" HorizontalAlignment="Left" Margin="513,112,0,0" VerticalAlignment="Top" Height="30" Width="31" FontFamily="\fonts\#Font Awesome 6 Free Solid" FontSize="20"/>
@@ -49,5 +51,10 @@
         <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="Worker(s):" Margin="577,472,434,172" FontSize="12" FontFamily="Verdana" Foreground="White"/>
         <TextBlock TextWrapping="Wrap" Text="Description:" Margin="579,518,434,126" FontSize="12" FontFamily="Verdana" Foreground="White"/>
         <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="Datetime:" Margin="579,566,434,78" FontSize="12" FontFamily="Verdana" Foreground="White"/>
+        
+        <TextBlock x:Name="DetailsName" TextWrapping="Wrap" TextAlignment="Left" Margin="658,428,23,189" FontSize="12" FontFamily="Verdana" Foreground="White"/>
+        <TextBlock x:Name="DetailsWorker" TextWrapping="Wrap" TextAlignment="Left" Margin="658,472,23,145" FontSize="12" FontFamily="Verdana" Foreground="White"/>
+        <TextBlock x:Name="DetailsDesc" TextWrapping="Wrap" TextAlignment="Left" Margin="658,518,23,99" FontSize="12" FontFamily="Verdana" Foreground="White"/>
+        <TextBlock x:Name="DetailsDate" TextWrapping="Wrap" TextAlignment="Left" Margin="658,566,23,51" FontSize="12" FontFamily="Verdana" Foreground="White"/>
     </Grid>
 </Page>

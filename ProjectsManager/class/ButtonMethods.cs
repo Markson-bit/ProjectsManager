@@ -11,8 +11,9 @@ namespace ButtonSpace
 {
     internal class ButtonMethods
     {
-        public void ExampleMethod()
+        public void AddToList()
         {
+            
         }
     }
 }
