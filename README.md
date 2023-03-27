@@ -1,9 +1,8 @@
 # Project for subject - Programming IV made in WPF.
 
 ### Introduction:
-  This is only design for my project which will be creating in the near future
+  Currently contains initial design with basic functionalities some new feature will be developed in near future.
    
-
 ### Features:
   1. ---
   2. ---
