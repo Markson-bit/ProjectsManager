@@ -1,7 +1,8 @@
 # Project for subject - Programming IV made in WPF.
 
 ### Introduction:
-  Currently contains initial design with basic functionalities some new feature will be developed in near future.
+  Currently contains initial design with basic functionalities.
+  Some new feature will be developed in near future.
    
 ### Features:
   1. ---
