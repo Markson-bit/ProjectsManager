@@ -12,11 +12,11 @@
         <ListBox x:Name="TaskList" HorizontalAlignment="Left" Height="638" Margin="28,0,0,0" VerticalAlignment="Center" Width="462" d:ItemsSource="{d:SampleData ItemCount=5}" FontFamily="Verdana" FontSize="18" Background="Transparent" Foreground="White" BorderBrush="Silver" BorderThickness="3" SelectionChanged="TaskList_SelectionChanged"/>
         <TextBox x:Name="NameBox" MaxLength="40" HorizontalAlignment="Left" Margin="544,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="520" Height="29" FontFamily="Verdana" FontSize="20" Background="Transparent" Foreground="White" BorderBrush="Silver" BorderThickness="0,0,0,3"/>
         <TextBlock Text="Name" FontFamily="Verdana" FontSize="10" Foreground="White" Margin="544,27,510,612"/>
-        <TextBox HorizontalAlignment="Left" Margin="544,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="520" Height="29" FontFamily="Verdana" FontSize="20" Background="Transparent" Foreground="White" BorderBrush="Silver" BorderThickness="0,0,0,3"/>
+        <TextBox x:Name="WorkerBox" HorizontalAlignment="Left" Margin="544,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="520" Height="29" FontFamily="Verdana" FontSize="20" Background="Transparent" Foreground="White" BorderBrush="Silver" BorderThickness="0,0,0,3"/>
         <TextBlock Text="Worker" FontFamily="Verdana" FontSize="10" Foreground="White" Margin="544,93,505,546"/>
-        <TextBox HorizontalAlignment="Left" Margin="544,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="520" Height="29" FontFamily="Verdana" FontSize="10" Background="Transparent" Foreground="White" BorderBrush="Silver" BorderThickness="0,0,0,3"/>
+        <TextBox x:Name="DescBox" HorizontalAlignment="Left" Margin="544,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="520" Height="29" FontFamily="Verdana" FontSize="10" Background="Transparent" Foreground="White" BorderBrush="Silver" BorderThickness="0,0,0,3"/>
         <TextBlock Text="Description" FontFamily="Verdana" FontSize="10" Foreground="White" Margin="544,163,487,476"/>
-        <DatePicker HorizontalAlignment="Left" Margin="544,236,0,0" VerticalAlignment="Top" Height="33" Width="260" FontFamily="Verdana" FontSize="20" Background="Transparent" Foreground="White" BorderThickness="0" BorderBrush="Transparent" Text="Choose date">
+        <DatePicker x:Name="DateBox" HorizontalAlignment="Left" Margin="544,236,0,0" VerticalAlignment="Top" Height="33" Width="260" FontFamily="Verdana" FontSize="20" Background="Transparent" Foreground="White" BorderThickness="0" BorderBrush="Transparent" Text="Choose date">
             <DatePicker.Style>
                 <Style TargetType="{x:Type DatePicker}">
                     <Style.Resources>

@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 using ButtonSpace;
+using System.Runtime.Remoting.Contexts;
 
 namespace ProjectsManager.pages
 {
@@ -23,17 +24,28 @@ namespace ProjectsManager.pages
     public partial class ProjectsPage : Page
     {
         string filePath = AppDomain.CurrentDomain.BaseDirectory + @"..\\..\\\data\testdata.txt";
-        //string filePath = AppDomain.CurrentDomain.BaseDirectory + @"/bin/ProjectsManager\data\testdata.txt";
+
         public ProjectsPage()
         {
             InitializeComponent();
-            // Reading tasks from file and appending them to List box.
+
             TaskList.Items.Clear();
-            string[] content = File.ReadAllLines(filePath);
-            foreach (string inside in content)
+
+            // Reading tasks from file, splitting by ';' char and appending task name to ListBox.
+
+            using (StreamReader sr = new StreamReader(filePath))
             {
-                TaskList.Items.Add(inside);
+                string line;
+
+                while ((line = sr.ReadLine()) != null)
+                {
+                    string[] parts = line.Split(';');
+                    string foundName = parts[0];
+                    TaskList.Items.Add(foundName);
+                }
             }
+
+
         }
 
         private void AddTask_Click(object sender, RoutedEventArgs e)
@@ -51,8 +63,10 @@ namespace ProjectsManager.pages
                     {
                         // If yes, adding name to ListBox
                         TaskList.Items.Add(NameBox.Text);
-                        string content = NameBox.Text + Environment.NewLine;
+
+                        string content = NameBox.Text + ";" + WorkerBox.Text + ";" + DescBox.Text + ";" + DateBox.Text + Environment.NewLine;
                         File.AppendAllText(filePath, content);
+
                         NameBox.Clear();
                     }
 
@@ -60,6 +74,8 @@ namespace ProjectsManager.pages
                     {
                         // Clearing Input box when user do not want to add same task.
                         NameBox.Clear();
+                        WorkerBox.Clear();
+                        DescBox.Clear();
                         return;
                     }
                 }
@@ -68,37 +84,46 @@ namespace ProjectsManager.pages
                 else
                 {
                     TaskList.Items.Add(NameBox.Text);
-                    string content = NameBox.Text + Environment.NewLine;
+                    string content = NameBox.Text + ";" + WorkerBox.Text + ";" + DescBox.Text + ";" + DateBox.Text + Environment.NewLine;
                     File.AppendAllText(filePath, content);
                     NameBox.Clear();
+                    WorkerBox.Clear();
+                    DescBox.Clear();
                 }
-
             }
         }
 
         private void DelTask_Click(object sender, RoutedEventArgs e)
         {
-            // Making an array from lines of file.
-            string[] inventoryData = File.ReadAllLines(filePath);
-            // Making a list from components of array.
-            List<string> inventoryDataList = inventoryData.ToList();
+            // Getting name of selected task
+            string selectedTask = this.TaskList.SelectedItem.ToString();
 
-            // Removing from the file specific task that is converted to string.
-            if (inventoryDataList.Remove(Convert.ToString(this.TaskList.SelectedItem)))
+            // Reading data from file
+            string[] lines = File.ReadAllLines(filePath);
+            List<string> linesList = lines.ToList();
+
+            // Finding line where name exists
+            string lineToRemove = linesList.FirstOrDefault(line => line.StartsWith(selectedTask + ";"));
+
+            // Deleting specific line from file and overwriting it without deleted line
+            if (lineToRemove != null)
             {
-                File.WriteAllLines(filePath, inventoryDataList.ToArray());
+                linesList.Remove(lineToRemove);
+                File.WriteAllLines(filePath, linesList.ToArray());
             }
 
-            // Removing selected task from List box.
+            // Deleting from ListBox
             if (this.TaskList.SelectedIndex != -1)
             {
                 this.TaskList.Items.RemoveAt(this.TaskList.SelectedIndex);
             }
         }
 
+
         // If task inside ListBox is checked, overwriting TextBlocks in Details
         private void TaskList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            // Clearing data from details section, if there are not tasks left (after deleting every task)
             if (TaskList.Items.Count == 0)
             {
                 DetailsName.Text = String.Empty;
@@ -106,12 +131,34 @@ namespace ProjectsManager.pages
                 DetailsDesc.Text = String.Empty;
                 DetailsDate.Text = String.Empty;
             }
+
+            // Reading file and splitting data by ';' char. Name is content behind first ';' char, worker is after first... - Filling details section
             if (TaskList.SelectedIndex != -1)
             {
-                DetailsName.Text = TaskList.SelectedItem.ToString();
-                DetailsWorker.Text = "Example Work no: " + (TaskList.SelectedIndex+1).ToString();
-                DetailsDesc.Text = "Example Desc no: " + (TaskList.SelectedIndex + 1).ToString();
-                DetailsDate.Text = "Example Date no: " + (TaskList.SelectedIndex + 1).ToString();
+                using (StreamReader sr = new StreamReader(filePath))
+                {
+                    for (int i = 0; i <= TaskList.SelectedIndex; i++)
+                    {
+                        string line = sr.ReadLine();
+
+                        if (i == TaskList.SelectedIndex)
+                        {
+                            string[] parts = line.Split(';');
+                            string foundName = parts[0];
+                            string foundPerson = parts[1];
+                            string foundDesc = parts[2];
+                            string foundDate = parts[3];
+
+                            DetailsName.Text = foundName;
+                            DetailsWorker.Text = foundPerson;
+                            DetailsDesc.Text = foundDesc;
+                            DetailsDate.Text = foundDate;
+                            break;
+                        }
+                    }
+                }
+
+
             }
         }
     }
