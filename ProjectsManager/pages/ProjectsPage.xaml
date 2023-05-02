@@ -51,7 +51,7 @@
         <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="Worker(s):" Margin="577,472,434,172" FontSize="12" FontFamily="Verdana" Foreground="White"/>
         <TextBlock TextWrapping="Wrap" Text="Description:" Margin="579,518,434,126" FontSize="12" FontFamily="Verdana" Foreground="White"/>
         <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="Datetime:" Margin="579,566,434,78" FontSize="12" FontFamily="Verdana" Foreground="White"/>
-        
+
         <TextBlock x:Name="DetailsName" TextWrapping="Wrap" TextAlignment="Left" Margin="658,428,23,189" FontSize="12" FontFamily="Verdana" Foreground="White"/>
         <TextBlock x:Name="DetailsWorker" TextWrapping="Wrap" TextAlignment="Left" Margin="658,472,23,145" FontSize="12" FontFamily="Verdana" Foreground="White"/>
         <TextBlock x:Name="DetailsDesc" TextWrapping="Wrap" TextAlignment="Left" Margin="658,518,23,99" FontSize="12" FontFamily="Verdana" Foreground="White"/>
