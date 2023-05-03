@@ -24,8 +24,7 @@ namespace ProjectsManager.pages
     /// </summary>
     public partial class ProjectsPage : Page
     {
-        string filePath = AppDomain.CurrentDomain.BaseDirectory + @"..\\..\\\data\testdata.txt";
-        string dataPath = AppDomain.CurrentDomain.BaseDirectory + @"..\\..\\\data\tasksdata.db";
+        string dataPath = AppDomain.CurrentDomain.BaseDirectory + @"..\\..\\\data\tasksdatabase.db";
 
         public ProjectsPage()
         {
@@ -43,7 +42,7 @@ namespace ProjectsManager.pages
                 {
                     string taskName = reader.GetValue(0).ToString();
 
-                    TaskList.Items.Add(taskName);                 
+                    TaskList.Items.Add(taskName);
                 }
 
                 connection.Close();
@@ -60,50 +59,10 @@ namespace ProjectsManager.pages
                 if (TaskList.Items.Contains(NameBox.Text))
                 {
                     // Asking user, if wants to add same task as existing one. 
-                    MessageBoxResult result = MessageBox.Show("Exactly same tasks already exist. Are you sure you want to add it again?", "Action needed.", MessageBoxButton.YesNo, MessageBoxImage.Question);
-                    if (result == MessageBoxResult.Yes)
-                    {
-
-                        string taskName = NameBox.Text;
-                        string taskPerson = WorkerBox.Text;
-                        string taskDesc = DescBox.Text;
-                        string taskDate = DateBox.Text;
-
-                        // If yes, adding name to ListBox
-                        TaskList.Items.Add(NameBox.Text);
-
-                        using (SQLiteConnection connection = new SQLiteConnection($"Data Source={dataPath};Version=3;"))
-                        {
-                            connection.Open();
-
-                            string sql = "insert into Tasks VALUES(@Name, @Person, @Desc, @Date)";
-
-                            using (SQLiteCommand command = new SQLiteCommand(sql, connection))
-                            {
-                                command.Parameters.AddWithValue("@Name", taskName);
-                                command.Parameters.AddWithValue("@Person", taskPerson);
-                                command.Parameters.AddWithValue("@Desc", taskDesc);
-                                command.Parameters.AddWithValue("@Date", taskDate);
-
-                                command.ExecuteNonQuery();
-                            }
-
-                            connection.Close();
-                        }
-
-                        NameBox.Clear();
-                        WorkerBox.Clear();
-                        DescBox.Clear();
-                    }
-
-                    else
-                    {
-                        // Clearing Input box when user do not want to add same task.
-                        NameBox.Clear();
-                        WorkerBox.Clear();
-                        DescBox.Clear();
-                        return;
-                    }
+                    MessageBoxResult result = MessageBox.Show("Exactly same tasks already exist.", "Info.", MessageBoxButton.OK, MessageBoxImage.Question);
+                    NameBox.Clear();
+                    WorkerBox.Clear();
+                    DescBox.Clear();
                 }
 
                 // If same task does not exist in ListBox
@@ -132,54 +91,45 @@ namespace ProjectsManager.pages
 
                             command.ExecuteNonQuery();
                         }
-
                         connection.Close();
                     }
-
                     NameBox.Clear();
                     WorkerBox.Clear();
                     DescBox.Clear();
                 }
             }
         }
-
         private void DelTask_Click(object sender, RoutedEventArgs e)
         {
-            // Getting name of selected task
-            string selectedTask = this.TaskList.SelectedItem.ToString();
-
-            // Removing selected task from the database
-            using (SQLiteConnection connection = new SQLiteConnection($"Data Source={dataPath};Version=3;"))
-            {
-                connection.Open();
-
-                string sql = "DELETE FROM Tasks WHERE Name=@Name";
-
-                using (SQLiteCommand command = new SQLiteCommand(sql, connection))
-                {
-                    command.Parameters.AddWithValue("@Name", selectedTask);
-
-                    command.ExecuteNonQuery();
-                }
-
-                connection.Close();
-            }
-
             // Removing selected task from ListBox
             if (this.TaskList.SelectedIndex != -1)
             {
+                string selectedTask = this.TaskList.SelectedItem.ToString();
                 this.TaskList.Items.RemoveAt(this.TaskList.SelectedIndex);
+
+                // Clearing data from details section after deleting task
+                DetailsName.Text = String.Empty;
+                DetailsWorker.Text = String.Empty;
+                DetailsDesc.Text = String.Empty;
+                DetailsDate.Text = String.Empty;
+
+                // Removing selected task from the database
+                using (SQLiteConnection connection = new SQLiteConnection($"Data Source={dataPath};Version=3;"))
+                {
+                    connection.Open();
+
+                    string sql = "DELETE FROM Tasks WHERE Name=@Name";
+
+                    using (SQLiteCommand command = new SQLiteCommand(sql, connection))
+                    {
+                        command.Parameters.AddWithValue("@Name", selectedTask);
+                        command.ExecuteNonQuery();
+                    }
+
+                    connection.Close();
+                }
             }
-
-            // Clearing data from details section after deleting task
-            DetailsName.Text = String.Empty;
-            DetailsWorker.Text = String.Empty;
-            DetailsDesc.Text = String.Empty;
-            DetailsDate.Text = String.Empty;
         }
-
-
-
         // If task inside ListBox is checked, overwriting TextBlocks in Details
         private void TaskList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -224,4 +174,3 @@ namespace ProjectsManager.pages
         }
     }
 }
-
