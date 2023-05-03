@@ -9,7 +9,35 @@
       Title="CalendarPage">
 
     <Grid>
-        <Calendar HorizontalAlignment="Left" Margin="26,231,0,0" VerticalAlignment="Top"/>
+        <Calendar x:Name="CalendarTask" CalendarItemStyle="{DynamicResource CalendarCalendarItemStyle1}" CalendarDayButtonStyle="{DynamicResource CalendarCalendarDayButtonStyle1}" Style="{DynamicResource CalendarStyle1}" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" Height="174" Width="368" Margin="94,0,0,0" SelectedDatesChanged="Calendar_OnSelectedDatesChanged">
+            <Calendar.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFE4EAF0"/>
+                    <GradientStop Color="#FFECF0F4" Offset="0.16"/>
+                    <GradientStop Color="#FFFCFCFD" Offset="0.16"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Calendar.Background>
+        </Calendar>
+        <Border BorderBrush="Silver" BorderThickness="3,0,3,0" HorizontalAlignment="Left" Height="638" Margin="557,0,0,0" VerticalAlignment="Center" Width="520">
+            <Button x:Name="NavigateButton" Style="{StaticResource Menubutton}" HorizontalAlignment="Center" VerticalAlignment="Top" Width="102" Visibility="Hidden" Content="Details" Margin="0,271,0,0" Click="NavigateButton_Click"/>
+        </Border>
+
+        <Label Content="&#xF08D;" Foreground="Silver" HorizontalAlignment="Left" Margin="566,79,0,0" VerticalAlignment="Top" Height="30" Width="28" FontFamily="\fonts\#Font Awesome 6 Free Solid" FontSize="20"/>
+        <Label Content="&#xF007;" Foreground="Silver" HorizontalAlignment="Left" Margin="566,124,0,0" VerticalAlignment="Top" Height="30" Width="28" FontFamily="\fonts\#Font Awesome 6 Free Solid" FontSize="20"/>
+        <Label Content="&#xF075;" Foreground="Silver" HorizontalAlignment="Left" Margin="565,176,0,0" VerticalAlignment="Top" Height="30" Width="30" FontFamily="\fonts\#Font Awesome 6 Free Solid" FontSize="20"/>
+        <Label Content="&#xf073;" Foreground="Silver" HorizontalAlignment="Left" Margin="566,227,0,0" VerticalAlignment="Top" Height="30" Width="28" FontFamily="\fonts\#Font Awesome 6 Free Solid" FontSize="20"/>
+
+        <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="Task name:" Margin="599,87,412,557" FontSize="12" FontFamily="Verdana" Foreground="White"/>
+        <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="Worker(s):" Margin="598,132,413,512" FontSize="12" FontFamily="Verdana" Foreground="White"/>
+        <TextBlock TextWrapping="Wrap" Text="Description:" Margin="600,184,413,460" FontSize="12" FontFamily="Verdana" Foreground="White"/>
+        <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="Datetime:" Margin="599,235,414,409" FontSize="12" FontFamily="Verdana" Foreground="White"/>
+
+        <TextBlock x:Name="DetailsName" TextWrapping="Wrap" TextAlignment="Left" Margin="680,87,28,531" FontSize="12" FontFamily="Verdana" Foreground="White"/>
+        <TextBlock x:Name="DetailsWorker" TextWrapping="Wrap" TextAlignment="Left" Margin="680,132,1,485" FontSize="12" FontFamily="Verdana" Foreground="White"/>
+        <TextBlock x:Name="DetailsDesc" TextWrapping="Wrap" TextAlignment="Left" Margin="680,184,1,432" FontSize="12" FontFamily="Verdana" Foreground="White"/>
+        <TextBlock x:Name="DetailsDate" TextWrapping="Wrap" TextAlignment="Left" Margin="680,235,1,382" FontSize="12" FontFamily="Verdana" Foreground="White"/>
+        <TextBlock x:Name="ExistingStatus" TextWrapping="Wrap" TextAlignment="Center" Margin="729,22,182,600" FontSize="18" FontFamily="Verdana" Foreground="White"/>
 
     </Grid>
 </Page>
