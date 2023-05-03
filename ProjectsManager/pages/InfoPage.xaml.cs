@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using System.Data.SQLite;
 
 namespace ProjectsManager.pages
 {
@@ -21,6 +22,9 @@ namespace ProjectsManager.pages
     /// </summary>
     public partial class InfoPage : Page
     {
+
+        string dataPath = AppDomain.CurrentDomain.BaseDirectory + @"..\\..\\\data\tasksdatabase.db";
+
         public InfoPage()
         {
             InitializeComponent();
@@ -28,6 +32,28 @@ namespace ProjectsManager.pages
             timer.Interval = TimeSpan.FromSeconds(0.01);
             timer.Tick += Timer_Tick;
             timer.Start();
+
+            using (SQLiteConnection connection = new SQLiteConnection($"Data Source={dataPath};Version=3;"))
+            {
+                connection.Open();
+
+                // Get the count of all tasks
+                SQLiteCommand countCommand = new SQLiteCommand("SELECT COUNT(*) FROM Tasks", connection);
+                int count = Convert.ToInt32(countCommand.ExecuteScalar());
+
+                // Get the name of the closest task
+                DateTime currentDate = DateTime.Now.Date;
+                SQLiteCommand closestCommand = new SQLiteCommand("SELECT Name FROM Tasks WHERE Date >= @Date ORDER BY Date ASC LIMIT 1", connection);
+                closestCommand.Parameters.AddWithValue("@Date", currentDate.ToString("dd.MM.yyyy"));
+                string closestTaskName = closestCommand.ExecuteScalar()?.ToString();
+
+                Amount.Text = count.ToString();
+                Closest.Text = closestTaskName ?? "No upcoming tasks";
+
+                connection.Close();
+            }
+
+
 
         }
 

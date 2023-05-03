@@ -86,7 +86,6 @@ namespace ProjectsManager.pages
                     DetailsDesc.Text = String.Empty;
                     DetailsDate.Text = String.Empty;
                 }
-
                 connection.Close();
             }
         }

@@ -10,6 +10,12 @@
 
     <Grid>
         <TextBlock Style="{StaticResource StaticTextBig}" Text="Welcome" HorizontalAlignment="Left" Margin="458,10,0,0" VerticalAlignment="Top" Height="63" Width="232"/>
-        <TextBlock Style="{StaticResource StaticTextSmall}" x:Name="StaticDate" HorizontalAlignment="Left" Margin="353,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="442"/>
+        <TextBlock Style="{StaticResource StaticTextSmall}" x:Name="StaticDate" HorizontalAlignment="Left" Margin="353,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="442"/>
+        <Border BorderBrush="Silver" BorderThickness="0,3,0,3" HorizontalAlignment="Left" Height="445" Margin="209,177,0,0" VerticalAlignment="Top" Width="730"/>
+        <Label Content="&#xF08D;" Foreground="Silver" HorizontalAlignment="Left" Margin="312,262,0,0" VerticalAlignment="Top" Height="30" Width="26" FontFamily="\fonts\#Font Awesome 6 Free Solid" FontSize="20"/>
+        <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="Amount of tasks:" Margin="343,266,569,370" FontSize="20" FontFamily="Verdana" Foreground="White"/>
+        <TextBlock TextWrapping="Wrap" TextAlignment="Center" Text="Closest deadline:" Margin="343,318,569,315" FontSize="20" FontFamily="Verdana" Foreground="White"/>
+        <TextBlock x:Name="Amount" TextWrapping="Wrap" TextAlignment="Left" Margin="534,268,137,341" FontSize="18" FontFamily="Verdana" Foreground="White"/>
+        <TextBlock x:Name="Closest" TextWrapping="Wrap" TextAlignment="Left" Margin="533,317,148,300" FontSize="20" FontFamily="Verdana" Foreground="White"/>
     </Grid>
 </Page>

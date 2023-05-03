@@ -19,7 +19,7 @@
                 </LinearGradientBrush>
             </Calendar.Background>
         </Calendar>
-        <Border BorderBrush="Silver" BorderThickness="3,0,3,0" HorizontalAlignment="Left" Height="638" Margin="557,0,0,0" VerticalAlignment="Center" Width="520">
+        <Border BorderBrush="Silver" BorderThickness="3,0,3,0" HorizontalAlignment="Left" Height="638" Margin="521,0,0,0" VerticalAlignment="Center" Width="556">
             <Button x:Name="NavigateButton" Style="{StaticResource Menubutton}" HorizontalAlignment="Center" VerticalAlignment="Top" Width="102" Visibility="Hidden" Content="Details" Margin="0,271,0,0" Click="NavigateButton_Click"/>
         </Border>
 
